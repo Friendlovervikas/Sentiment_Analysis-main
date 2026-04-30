@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweet Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .tweet-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .positive { background-color: #e0f7e9; }
+        .negative { background-color: #ffe0e0; }
+        .neutral { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h2>Live Twitter Sentiment Results</h2>
+
+<form method="POST" action="/live-streaming">
+    <label for="keyword">Enter keyword:</label>
+    <input type="text" id="keyword" name="keyword" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+<hr>
+
+</body>
+</html>
